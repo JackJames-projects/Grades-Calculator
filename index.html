@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>College Grade Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>College Grade Calculator</h1>
+      <p>Calculate your final grade and what you need in the exam.</p>
+    </header>
+
+    <section class="card">
+      <h2>Inputs</h2>
+
+      <div class="grid">
+        <label>
+          Continuous Assessment (CA) %
+          <input id="ca" type="number" min="0" max="100" step="0.01" placeholder="e.g. 78.45">
+        </label>
+
+        <label>
+          Exam %
+          <input id="exam" type="number" min="0" max="100" step="0.01" placeholder="e.g. 55">
+        </label>
+
+        <div class="caBox">
+  <div class="caHeader">
+    <div>
+      <div class="labelTitle">CA Breakdown</div>
+      <div class="labelSub">Enter each component mark + its CA weight. CA weights must add to 100.</div>
+    </div>
+    <button id="addCaBtn" type="button" class="secondary small">+ Add</button>
+  </div>
+
+  <div id="caItems" class="caItems"></div>
+
+  <div class="caFooter">
+    <span>Calculated CA %</span>
+    <strong id="caTotalOut">—</strong>
+  </div>
+</div>
+
+
+        <label>
+          Exam Weight %
+          <input id="examWeight" type="number" min="0" max="100" step="1" value="80">
+        </label>
+
+        <label>
+          Target Overall %
+          <input id="target" type="number" min="0" max="100" step="1" value="40">
+        </label>
+      </div>
+
+      <div class="row">
+        <button id="calcBtn">Calculate</button>
+        <button id="resetBtn" class="secondary">Reset</button>
+      </div>
+
+      <p id="error" class="error" role="alert"></p>
+    </section>
+
+    <section class="card">
+      <h2>Results</h2>
+      <div class="results">
+        <div class="result">
+          <span>Final Grade</span>
+          <strong id="finalOut">—</strong>
+        </div>
+        <div class="result">
+          <span>Exam Needed for Target</span>
+          <strong id="neededOut">—</strong>
+        </div>
+        <div class="result">
+          <span>Status</span>
+          <strong id="statusOut">—</strong>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <small>Tip: weights should add to 100.</small>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
